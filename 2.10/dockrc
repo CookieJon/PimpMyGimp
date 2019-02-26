@@ -1,0 +1,27 @@
+# recently closed docks
+
+(GimpSessionInfo "Images, Devices, Undo"
+    (factory-entry "gimp-dock-window")
+    (position 414 97)
+    (size 200 240)
+    (open-on-exit)
+    (aux-info
+        (show-image-menu "false")
+        (follow-active-image "true"))
+    (gimp-dock
+        (book
+            (current-page 1)
+            (dockable "gimp-image-list"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-device-status"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-undo-history"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true"))))))
+
+# end of recently closed docks

@@ -1,0 +1,15 @@
+# GIMP user context
+
+(tool "gimp-paintbrush-tool")
+(paint-info "gimp-paintbrush")
+(opacity 0.778000)
+(brush "LJF Rock Texture")
+(dynamics "LJF-RockTexture")
+(mybrush "100% Opaque")
+(pattern "Paper")
+(gradient "FG to Transparent")
+(palette "Standard")
+(font "Yu Gothic UI Bold")
+(tool-preset "Core Pointer")
+
+# end of user context

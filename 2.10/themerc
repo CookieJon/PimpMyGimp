@@ -1,0 +1,10 @@
+# GIMP themerc
+#
+# This file is written on GIMP startup and on every theme change.
+# It is NOT supposed to be edited manually. Edit your personal
+# gtkrc file instead (C:\Users\Scott\AppData\Roaming\GIMP\2.10\gtkrc).
+
+include "C:\\Users\\Scott\\AppData\\Roaming\\GIMP\\2.10\\themes\\Dark Blue\\gtkrc"
+include "C:\\Users\\Scott\\AppData\\Roaming\\GIMP\\2.10\\gtkrc"
+
+# end of themerc

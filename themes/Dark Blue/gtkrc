@@ -52,6 +52,7 @@ include "imagerc"                      # include image resources
  * -------------------------------------------------------------
  */
 
+
 gtk_color_scheme = "hl_color:#3380b3"  # blue
 include "../_flat_gimp_icons/_darkrc"  # include base-theme
 
@@ -65,3 +66,31 @@ style "gimp-tooltips"
 {
   fg[NORMAL] = "#BFFFEF"
 }
+
+
+###########################################################
+
+style "gimp-dark-menu-bar" = "gimp-dark-default-style"
+{
+  xthickness = 4
+  ythickness = 6
+
+  fg[NORMAL] = "#CBCBCB"
+ font_name = "sans 11"
+  engine "pixmap"
+    {
+      image
+        {
+          function = BOX
+          file = "ui/menubar.png"
+          border = { 2, 2, 2, 2 }
+          stretch = TRUE
+        }
+    }
+}
+
+class "GtkMenuBar" style "gimp-dark-menu-bar"
+widget_class "*<GtkMenuBar>*" style "gimp-dark-menu-bar"
+widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "gimp-dark-menu-bar"
+
+###########################################################

@@ -6069,4 +6069,4 @@ style "gimp-icons"
     }
 }
 
-class "GtkWidget" style "gimp-icons"
+class "GtkWidget" style:highest "gimp-icons"

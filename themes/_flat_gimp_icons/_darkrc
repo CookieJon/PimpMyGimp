@@ -127,7 +127,7 @@ style "gimp-default-style"
 {
   GtkButton      ::child-displacement-x  = 1              #
   GtkButton      ::child-displacement-y  = 1              #
-  GtkButton      ::default_border        = { 0, 0, 0, 0 } #
+  GtkButton      ::default_border        = { 4, 0, 0, 0 } #
   GtkCheckButton ::indicator-size        = 18             # Checkbox size
 
   GtkExpander    ::expander-size         = 16             #
@@ -153,14 +153,12 @@ style "gimp-default-style"
   GtkTreeView    ::expander_size         = 14             # Preferences item padding
   GtkTreeView    ::vertical-separator    = 5              # Preferences item padding
 
-# Uncommenting this line allows to set a different (smaller) font for GIMP.
-#
-#   font_name = "sans 11"
 
+#   font_name = "sans 11"
 font_name = "corbel 12"
 
-  xthickness        = 1
-  ythickness        = 1
+  xthickness        = 0
+  ythickness        = 0
 
   fg[NORMAL]        = "#D6D6D6"  # Wilber, active tab text Enabled next/pre tab arrow
   fg[PRELIGHT]      = "#ffffff"  # Panel text hover
@@ -176,7 +174,7 @@ font_name = "corbel 12"
   bg[INSENSITIVE]   = "#929292"  # preferences button outline
 	
   base[NORMAL]      = "#464646"  # text box background
-#  base[PRELIGHT]    = "#00FF00"  # 
+  base[PRELIGHT]    = "#00FF00"  # 
   base[ACTIVE]      = @hl_color  # (was "#f07746") # selection without focus
   base[SELECTED]    = @hl_color  # (was "#f07746") # selected text and tabs
   base[INSENSITIVE] = "#373737"  # inactive area
@@ -187,18 +185,28 @@ font_name = "corbel 12"
   text[SELECTED]    = "#ffffff"  # preferences selected text
   text[INSENSITIVE] = "#AAAAAA"  # filter/tag text
 
+
+# BUTTON - Size appropriate for buttons (16px )
+# DIALOG - Size appropriate for dialogs (48px )
+# DND - Size appropriate for drag and drop (32px )
+# INVALID - Invalid size.
+# LARGE_TOOLBAR - Size appropriate for large toolbars (24px)
+# MENU - Size appropriate for menus (16px).
+# SMALL_TOOLBAR - Size appropriate for small toolbars (16px).
+
+
   GimpDockWindow::menu-preview-size = large-toolbar
   GimpToolPalette::tool-icon-size = large-toolbar
   GimpToolPalette::button-relief = none
-  GimpDockbook::tab-border = 0
+  GimpDockbook::tab-border = 2
   GimpDockbook::tab-icon-size = dnd
   GimpColorNotebook::tab-border = 0
   GimpColorNotebook::tab-icon-size = dnd
   GimpDeviceEditor::handle-size = 32
   GimpDockable::content-border = 1
-  GimpEditor::content-spacing = 1
-  GimpEditor::button-spacing = 1
-  GimpEditor::button-icon-size = menu
+  GimpEditor::content-spacing = 0
+  GimpEditor::button-spacing = 2
+  GimpEditor::button-icon-size = large-toolbar
 
 
   engine "clearlooks" {  }
@@ -235,14 +243,14 @@ style "gimp-vslider" = "gimp-default-style"
 # =========================================================
 style "gimp-button" = "gimp-default-style"
 {
-  xthickness         = 4
-  ythickness         = 4
+  xthickness         = 2
+  ythickness         = 2
 
   bg[NORMAL]         = "#646464"  # Buttons
   # bg[NORMAL]         =  @hl_color  # Buttons
   bg[PRELIGHT]       = @hl_color  # (was "#AAAAAA") # Buttons hover
   bg[ACTIVE]         = @hl_color  # Buttons select
-  bg[SELECTED]       =@hl_color # Buttons border
+  bg[SELECTED]       = @hl_color # Buttons border
   bg[INSENSITIVE]    = "#797979"  # (was "#929292") # Buttons Inactive
 
   base[NORMAL]      = "#464646"  # text box background
@@ -263,7 +271,7 @@ style "gimp-button" = "gimp-default-style"
 style "gimp-entry" = "gimp-default-style"
 {
   xthickness = 6
-  ythickness = 6
+  ythickness = 0
 }
 
 # Checkboxes (this includes tools in the toolbox)
@@ -308,15 +316,15 @@ style "gimp-panel" = "gimp-default-style"
    text[INSENSITIVE] = "#929292"  # Inactive tab text
 }
 
-# Menus
+# Menus (Text link)
 # =========================================================
 style "gimp-menu" = "gimp-default-style"
 {
   xthickness         = 2
-  ythickness         = 1
-
+  ythickness         = 6
+font_name = "sans 10"
   fg[NORMAL]         = "#AAAAAA"  # Status bar pop up menu down arrow
-  fg[PRELIGHT]       = @hl_color  # (was "#f07746") # Status bar pop up menu down arrow hover
+  fg[PRELIGHT]       = "#ffffff"    # (was "#f07746") # Status bar pop up menu-text down arrow hover
   fg[ACTIVE]         = @hl_color  # (was "#f07746") #
   fg[SELECTED]       = @hl_color  # (was "#f07746") #
   fg[INSENSITIVE]    = "#AAAAAA"  # 
@@ -327,18 +335,18 @@ style "gimp-menu" = "gimp-default-style"
   bg[INSENSITIVE]    = "#535353"  # Status bar popup up button inactive
 }
 
-# Menu Items
+# Menu Items (checkboxes etc)
 # =========================================================
 style "gimp-menu-item" = "gimp-default-style"
 {
-  xthickness         = 4
-  ythickness         = 4
-
-#  fg[NORMAL]         = "#00FF00"  # Panel menu arrows
- #  fg[PRELIGHT]       = "#ffffff"  # Panel menu text hover
-#  fg[ACTIVE]         = "#00FF00"  #
-#  fg[SELECTED]       = "#00FF00"  #
-#   fg[INSENSITIVE]    = "#929292"  # inactive text
+  xthickness         = 16
+  ythickness         = 0
+ 
+  fg[NORMAL]         = "#00FF00"  # Panel menu arrows
+  fg[PRELIGHT]       = "#ffffff"  # Panel menu text hover
+  fg[ACTIVE]         = "#00FF00"  #
+  fg[SELECTED]       = "#00FF00"  #
+   fg[INSENSITIVE]    = "#929292"  # inactive text
 
   bg[NORMAL]         = "#ff0000"  # Panel menu separator
   bg[PRELIGHT]       = "#00FF00"  #
@@ -346,13 +354,13 @@ style "gimp-menu-item" = "gimp-default-style"
   bg[SELECTED]       = "#6d6d6d"  # (was "#535353", try "#075a8f") # Panel menu highlight hover
   bg[INSENSITIVE]    = "#929292"  # inactive highlight arrows
 
-   base[NORMAL]      = "#00FF00"  #
-   base[PRELIGHT]    = "#00FF00"  #
-   base[ACTIVE]      = "#00FF00"  #
-   base[SELECTED]    = "#00FF00"  #
+   base[NORMAL]      =  @hl_color  #
+   base[PRELIGHT]    =  @hl_color  #
+   base[ACTIVE]      = @hl_color #
+   base[SELECTED]    = @hl_color  #
    base[INSENSITIVE] = "#00FF00"  #
 
-  text[NORMAL]       = "#000000"  #
+  text[NORMAL]       = "#FFFFFF"  #
   text[PRELIGHT]     = "#000000"  #
   text[ACTIVE]       = "#000000"  #
   text[SELECTED]     = "#000000"  #
@@ -367,8 +375,10 @@ style "gimp-menubar" = "gimp-default-style" {
 #  fg[ACTIVE]        = "#00FF00"  #
 #  fg[SELECTED]      = "#00FF00"  #
 #  fg[INSENSITIVE]   = "#929292"  #
+  ythickness         = 8
+ base[NORMAL]      = "#535353"  #
 
-   bg[NORMAL]        = "#363737"  #
+   bg[NORMAL]        = "#535353"  #
 #  bg[PRELIGHT]      = "#00FF00"  #
 #  bg[ACTIVE]        = "#00FF00"  #
 #  bg[SELECTED]      = "#00FF00"  #
@@ -433,26 +443,51 @@ class "GtkWidget"      style "gimp-default-style"
 class "GtkButton"      style "gimp-button"
 class "GtkMenu"        style "gimp-menu"
 class "GtkEntry"       style "gimp-entry"
-class "GtkMenuItem"    style "gimp-menu-item"
+ class "GtkMenuItem"    style "gimp-menu-item"
 class "GtkStatusbar"   style "gimp-statusbar"
 class "GtkNotebook"    style "gimp-panel"
 class "GtkProgressBar" style "gimp-progressbar"
 class "GtkCheckButton" style "gimp-check"
 class "GtkRadioButton" style "gimp-check"
-class "GtkMenuBar"     style "gimp-menubar"
+ class "GtkMenuBar"     style "gimp-menubar"
 class "GtkScrollbar"   style "gimp-scrollbar"
 class "GtkHScale"      style "gimp-hslider"
 class "GtkVScale"      style "gimp-vslider"
 
 widget_class "*<GtkButton>*" style:highest  "gimp-button"
 
+widget_class "*<GtkMenuBar>*" style "gimp-menubar"
+widget_class "*<GtkMenuBar>.<GtkMenuItem>*" style "gimp-menubar"
+
+class "GtkMenu" style "gimp-menu"
+widget_class "*<GtkMenu>*" style "gimp-menu"
+
+
+# =========================================================
+# class "GimpSpinScale" style "gimp-dark-spin-scale-style"
+
+# class "GtkMenuItem" style "ubuntu-fix-menu-item"
+# widget_class "*<GtkComboBox>*<GtkSeparator>" style "gimp-dark-combobox-separator-style"
+# class "GimpSpinScale" style "gimp-dark-spin-scale-style"
+# widget_class "*<GtkComboBoxEntry>*<GtkEntry>" style "gimp-dark-combobox-entry-button-style"
+# widget_class "*<GtkNotebook>*<GtkEventBox>*<GtkComboBoxEntry>*<GtkEntry>" style "gimp-dark-combobox-entry-button-style"
+# widget_class "*<GtkComboBoxEntry>*<GtkButton>" style "gimp-dark-combobox-entry-button-style"
+# 
+# widget_class "*<GtkNotebook>*<GtkComboBoxEntry>*<GtkEntry>" style "gimp-dark-notebook-combobox-entry-style"
+# widget_class "*<GtkNotebook>*<GtkEntry>" style "gimp-dark-notebook-entry-style"
+# widget_class "*<GtkComboBox>*<GtkButton>" style "gimp-dark-combobox-button-style"
+# widget_class "*<GtkComboBox>" style "gimp-dark-combobox-style"
+# widget_class "*<GtkEntry>*<GtkButton>*" style "gimp-dark-combobox-style1"
+
+# widget_class "*<GtkButton>*" style "gimp-dark-button-style"
+# =========================================================
 
 
 ###########################################################
 
 style "gimp-dark-tool-dialog-style" = "gimp-dark-default-style"
 {
-  GtkDialog::action-area-border = 6
+  GtkDialog::action-area-border = 16
 }
 
 #class "GimpToolDialog" style "gimp-dark-tool-dialog-style"
